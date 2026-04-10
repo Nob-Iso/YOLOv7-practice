@@ -1,5 +1,5 @@
 # ベースイメージ(CUDA)の指定
-FROM nvidia/cuda:13.2.0-cudnn-devel-ubuntu24.04
+FROM nvidia/cuda:12.6.3-cudnn-devel-ubuntu22.04
 
 # 必要なパッケージをインストール
 RUN apt-get update && apt-get install -y python3-pip python3-venv git vim
