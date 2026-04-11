@@ -6,6 +6,7 @@ services:
     image: pytorch_container
     runtime: nvidia
     container_name: pytorch_container
+    shm_size: '8gb'
     volumes:
       - .:/app/pytorch_container
     deploy:
