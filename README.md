@@ -90,3 +90,25 @@ EOF
 ```bash
 python test.py --data data/coco128.yaml --img 640 --batch 32 --conf 0.001 --iou 0.65 --device 0 --weights yolov7.pt --name yolov7_640_val
 ```
+
+---
+
+## Inferenceの実行
+
+### 1. detect.py を実行
+
+コンテナ内で以下を実行します。
+
+```bash
+python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source inference/images/
+```
+
+結果は `runs/detect/exp/` 以下に保存されます。
+
+### 2. 出力画像の確認
+
+`imgcat` を使ってターミナル上で画像を確認できます。
+
+```bash
+imgcat /app/yolov7/runs/detect/exp/horses.jpg
+```
