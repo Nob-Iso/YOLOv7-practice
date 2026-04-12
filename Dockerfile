@@ -26,5 +26,9 @@ RUN /app/.venv/bin/pip install -r /app/yolov7/requirements.txt
 # PyTorch 2.6以降の weights_only=True デフォルト変更への対応パッチ
 RUN sed -i 's/ckpt = torch.load(w, map_location=map_location)/ckpt = torch.load(w, map_location=map_location, weights_only=False)/' /app/yolov7/models/experimental.py
 
+# imgcatのインストール
+RUN curl -Lo /usr/local/bin/imgcat https://iterm2.com/utilities/imgcat && \
+    chmod +x /usr/local/bin/imgcat
+
 # コンテナの起動時にbashを実行
 CMD ["/bin/bash"]
